@@ -198,11 +198,12 @@ secondGameContainer.appendChild(runnerUpPledgeGame);
 
 /*******************************************************************************
  * Optional: Add a search bar
- * Skills used: spread operator, destructuring, template literals, sort 
+ * Skills used: input elements, event listeners, filter
  */
 const searchBar = document.getElementById("search-bar");
 
-// clear search bar
+// clear search bar:
+// we'll make clicking buttons clear the search bar
 function clearSearchBar() {
     searchBar.value = "";
 }
@@ -224,4 +225,10 @@ function showMatchingGames() {
 
 // add event listener
 searchBar.addEventListener("change", showMatchingGames);
+
+/*******************************************************************************
+ * Optional: Add a navigation menu
+ * Skills used: anchor elements, CSS (margin-left: auto)
+ * (see index.html)
+ */
 
