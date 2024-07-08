@@ -44,6 +44,15 @@ body {
     font-size: 50px;
 }
 
+#search-bar-container {
+    text-align: center;
+}
+
+#search-bar {
+    margin: 0 auto;
+    font-size: x-large;
+}
+
 #games-container {
     display: flex;
     flex-wrap: wrap;

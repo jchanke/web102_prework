@@ -27,6 +27,15 @@ let gamesContainer = document.getElementById("games-container");
 
 // create a function that adds all data from the games array to the page
 function addGamesToPage(games) {
+    // if no games, tell the user
+    if (games.length == 0) {
+        const noGamesMsg = document.createElement("div");
+        noGamesMsg.innerHTML = "No games found with this query. Please try again!";
+        gamesContainer.appendChild(noGamesMsg);
+        return
+    }
+
+    // otherwise, add games
     for (const game of games) {
         // create a new div element, which will become the game card
         let gameCard = document.createElement("div");
@@ -95,6 +104,9 @@ function filterUnfundedOnly() {
 
     // use the function we previously created to add the unfunded games to the DOM
     addGamesToPage(unfundedGames);
+
+    // clear search bar
+    clearSearchBar();
 }
 
 // show only games that are fully funded
@@ -106,6 +118,10 @@ function filterFundedOnly() {
 
     // use the function we previously created to add unfunded games to the DOM
     addGamesToPage(fundedGames);
+
+    // clear search bar
+    clearSearchBar();
+
 }
 
 // show all games
@@ -114,6 +130,9 @@ function showAllGames() {
 
     // add all games from the JSON data to the DOM
     addGamesToPage(GAMES_JSON);
+
+    // clear search bar
+    clearSearchBar();
 }
 
 // select each button in the "Our Games" section
@@ -176,3 +195,33 @@ firstGameContainer.appendChild(topPledgeGame);
 const runnerUpPledgeGame = document.createElement("p");
 runnerUpPledgeGame.innerHTML = game2.name;
 secondGameContainer.appendChild(runnerUpPledgeGame);
+
+/*******************************************************************************
+ * Optional: Add a search bar
+ * Skills used: spread operator, destructuring, template literals, sort 
+ */
+const searchBar = document.getElementById("search-bar");
+
+// clear search bar
+function clearSearchBar() {
+    searchBar.value = "";
+}
+
+// show all matching games
+function showMatchingGames() {
+    // clear games container
+    deleteChildElements(gamesContainer);
+
+    // get matching games
+    const searchName = searchBar.value.toLowerCase();
+    const matchingGames = GAMES_JSON.filter((game) => {
+        return game.name.toLowerCase().startsWith(searchName);
+    });
+
+    // add matching games to games container
+    addGamesToPage(matchingGames);
+}
+
+// add event listener
+searchBar.addEventListener("change", showMatchingGames);
+
