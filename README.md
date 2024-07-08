@@ -18,24 +18,20 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 * [X] Added a search bar to search through game *names*.
-* [ ] The menu has links to the `Stats` and `Our Games` sections for quick navigation.
+* [X] The menu has links to the `Stats` and `Our Games` sections for quick navigation.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/qo2AeNK' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with [peek](https://github.com/phw/peek).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+It took a bit to get used to the CSS instructions again: `margin`, `padding` and all of that. But this was fun!
 
 ## License
 
